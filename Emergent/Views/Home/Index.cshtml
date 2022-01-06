@@ -1,0 +1,19 @@
+﻿@model Emergent.Models.Software
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Software Search</h1><br /> <br />
+<form method="post" enctype="multipart/form-data" asp-action="SearchResults">
+    <div class="text-center">
+        
+        <table>
+            <tr>
+                <td>Version:</td>
+                <td>@*<input asp-for="Version" class="form-control" /><span asp-validation-for="Version" class="text-danger"></span>*@</td>
+            
+                <td>@Html.TextBoxFor(model => model.Version, new { @class = "form-control", placeholder = "###.###.###", required = "required", pattern = @"^(?:[0-9]{1,3}\.){2}[0-9]{1,3}$"  })</td>
+                <td><input type="Submit" /></td>
+            </tr>
+        </table>
+    </div>
+</form>
